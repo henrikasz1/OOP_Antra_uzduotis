@@ -2,7 +2,7 @@
 # Antroji objektinio programavimo uzduotis
 # v1.0 versija:
 -----------------------------------------------------------
-Programa apdoroja naudotojo ivestus duomenis (vardas, pavarde, pazymiai, egzamino rezultatas) ir apskaiciuoja kiekvieno mokinio galutini rezultata pagal mediana arba vidurki.
+ Programa apdoroja naudotojo ivestus duomenis (vardas, pavarde, pazymiai, egzamino rezultatas) ir apskaiciuoja kiekvieno mokinio galutini rezultata pagal mediana arba vidurki.
 -----------------------------------------------------------
 # Programos funkcionalumas:
  1) Programa reikalauja ivesti mokinio varda (naudojant netinkamus vardui elementus, prasoma ivesti varda is naujo)
