@@ -1,7 +1,7 @@
 #include "functions.h"
 #include "struct.h"
 
-double median (vector<int> A)
+double median (vector<int> &A)
 {
   int a, b;//laikinieji kintamieji medianos skaiciavimui
   sort(A.begin(), A.end());
@@ -17,7 +17,7 @@ double median (vector<int> A)
     return A[a];
   }
 }
-double average (vector<int> A)
+double average (vector<int> &A)
 {
   int total=0;
   for(int i=0; i<A.size(); i++)
@@ -26,7 +26,7 @@ double average (vector<int> A)
   }
   return total*1.0/A.size();
 }
-void output (int n, vector<data> B)
+void output (int n, vector<data> &B)
 {
       system("cls");
       //surikiuoju duomenis pagal varda
