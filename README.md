@@ -17,3 +17,16 @@
  
  6) Programa klausia, ar naudotojas nori ivesti dar vieno mokinio duomenis
  
+# v0.2 versija:
+
+1) Pakeistas random skaiciu generavimas, dabar kiekviena karta skaiciai bus skirtinti(pagal laika)
+2) Pakeistas vardo ir pavardes ivedimo tikrinimas (ankstesnese versijose kartais crash'indavo)
+3) Sulygiuota duomenu lentele, todel dabar ja daug lengviau skaityti
+4) Nuo siol galima pasirinkti, ar duomenis naudotojas nori nuskaityti is failo, ar juos ivesti
+5) Programa isveda surikiuotus duomenis pagal varda (arba jeigu vardas toks pats, pagal pavarde)
+6) Isimtas pasirinkimas, ar apskaiciuoti galutini rezultata mediana, ar vidurkiu (pagal uzduoties salyga)
+
+# v0.3 versija:
+
+1) Ideta try/catch, kuris patikrina, ar failas, kuri nori nuskaityti, egzistuoja
+2) Programa padalinta i header ir cpp failus
