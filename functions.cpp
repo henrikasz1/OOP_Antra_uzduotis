@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "struct.h"
 
 double median (vector<int> A)
 {
@@ -27,6 +28,7 @@ double average (vector<int> A)
 }
 void output (int n, vector<data> B)
 {
+      system("cls");
       //surikiuoju duomenis pagal varda
       for (int i=0; i<n-1; i++)
           for (int j=i+1; j<n; j++)

@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "struct.h"
 
 int main ()
 {
@@ -99,7 +100,7 @@ int main ()
     ifstream in ("kursiokai.txt");
     if (!in.good())
     {
-      throw "failas neegzistuoja \n";
+      throw runtime_error("failas neegzistuoja \n");
     }
     int nd;//kintamasis, kuriuo nuskaitysiu visus skaicius
     string line; //kintamasis, kuriuo nuskaitysiu visa eilute
@@ -120,9 +121,11 @@ int main ()
         }
         in.close();
     }
-    catch(const char* a)
+    catch(exception &e)
     {
-      cout << a << endl;
+      system("cls");
+      cout << e.what() << endl;
+      return 0; //kills the program
     }
  }
     //kreipiasi i funkcijas ir apskaiciuoja mediana/vidurki
