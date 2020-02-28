@@ -30,3 +30,5 @@
 
 1) Ideta try/catch, kuris patikrina, ar failas, kuri nori nuskaityti, egzistuoja
 2) Programa padalinta i header ir cpp failus
+
+-Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila
