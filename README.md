@@ -32,3 +32,17 @@
 2) Programa padalinta i header ir cpp failus
 
 -Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila
+
+# v0.4 versija:
+
+Sukurta nauja programos funkcija, kuri gali sugeneruoti 5 random failus(dydziai: 1000, 10000, 100000, 1000000, 10000000)
+Si nauja funkcija sugeneruoja faila, ji is naujo nuskaito ir galiausiai padalina i du failus (protingi/neprotingi). Taip pat si funkcija isveda kiekvieno etapo ivykdymo laika.
+
+Pvz:
+Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:
+
+ Failo dydis: 1000
+ Faila sugeneravo per: 15.607 ms
+ Faila nuskaite per: 31.248 ms
+ Studentus surusiavo ir isvede i naujus failus per: 15.642ms
+ Bendras laikas: 78.1ms
