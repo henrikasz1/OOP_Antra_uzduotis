@@ -62,5 +62,120 @@ void output (int n, vector<data> &B)
         cout << fixed << setprecision(2) << B[i].average;
         cout<<endl;
       }
+}
+void generateFile(int kiekis, int nddydis, string &a)
+{
+    auto start = std::chrono::steady_clock::now();
+    srand(time(NULL));
+    string vardas= "vardas";
+    string pavarde= "pavarde";
+    string nd="ND";
+    string egz="EGZ";
+    stringstream numOfFile;
+    numOfFile << kiekis;
+    string num=numOfFile.str();
+    a="randomly_generated_file_of "+num+".txt";
+    ofstream fd(a);
+    fd << left << setw(20) << vardas << left << setw(20) << pavarde;
+    for (int i=1; i<=nddydis; i++)
+    {
+        fd << setw(5) << right << nd << i << " ";
+    }
+    fd << setw(5) << right << egz << endl;
+    for(int j=1; j<=kiekis; j++)
+    {
+        fd << vardas << j;
+        fd << setw(20-displayHelper(j)) << right;
+        fd << pavarde << j;
+        for (int k=0; k<nddydis; k++)
+        {
+            if (k==0)
+            {
+                fd << right << setw(18-displayHelper(j)) << rand()%10+1;
+            }
+            else fd << right << setw(7) << rand()%10+1;
+        }
+        fd << right << setw(7) << rand()%10+1 << endl;
+    }
+    fd.close();
+    auto finish = std::chrono::steady_clock::now();
+    cout<<"Faila sugeneravo per: "<<std::chrono::duration <double, milli>(finish - start).count()<<" ms"<<endl;
+}
+int displayHelper (int number)
+{
+    int temp=0;
+    while (number>0)//kadangi integeris suroundina, galima rasyt tokia salyga
+    {
+        number/=10;
+        temp++;
+    }
+    return temp;
+}
+void readFile(vector<data> &M, string name, int &k, int nddydis)
+{
+    auto start = std::chrono::steady_clock::now();
+    k=0;
+    int nd;
+    ifstream in(name);
+    in.ignore(256,'\n'); //skipina pirma eilute
+    while(!in.eof())
+    {
+        M.push_back(data());
+        in >> M[k].name >> M[k].lastName;
+        for (int i=0; i<nddydis; i++)
+        {
+            in >> nd;
+            M[k].A.push_back(nd);
+        }
+        in >> M[k].egz;
+        M[k].median=0.4*median(M[k].A)+0.6*M[k].egz;
+        M[k].average=0.4*average(M[k].A)+0.6*M[k].egz;
+        if (in.eof())
+        {
+            break;
+        }
+        k++;
 
+    }
+    cout << k<< endl;
+    M.shrink_to_fit();
+    auto finish = std::chrono::steady_clock::now();
+    cout<<"Faila nuskaite per: "<<std::chrono::duration <double, milli>(finish - start).count()<<" ms"<<endl;
+    in.close();
+}
+void distributeFile(int numOfStudents, int k, vector<data> &M)
+{
+    auto start = std::chrono::steady_clock::now();
+    stringstream number;
+    number << numOfStudents;
+    string num=number.str();
+    ofstream bad("apgailetini "+num+".txt");
+    ofstream good("dievai "+num+".txt");
+    for (int i=0; i<k; i++)
+    {
+        if (M[i].average<5)
+        {
+            bad.width(15);
+            bad << left << M[i].name;
+            bad.width(15);
+            bad << left << M[i].lastName;
+            bad.width(15);
+            bad << left << M[i].median;
+            bad.width(15);
+            bad << left << M[i].average << endl;
+        }
+        else if (M[i].average>=5)
+        {
+            good.width(15);
+            good << left << M[i].name;
+            good.width(15);
+            good << left << M[i].lastName;
+            good.width(15);
+            good << left << M[i].median;
+            good.width(15);
+            good << left << M[i].average << endl;
+        }
+    }
+    auto finish = std::chrono::steady_clock::now();
+    cout << "Studentus surusiavo ir isvede i naujus failus per: " << std::chrono::duration <double, milli>(finish - start).count() << "ms" << endl;
 }

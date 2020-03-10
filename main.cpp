@@ -11,10 +11,12 @@ int main ()
   char choice; // elementas, kuris tikrina, kokiu budu ivesti namu darbu rezultatus
   char read; //elementas, kuris tikrina, ar duomenys bus nuskaityti is failo, ar ivesti per console
 
+  vector<data> M; //i si vektoriu nuskaitys sugeneruota faila
+
   int n=0;//vektoriaus dydis
 
   //nuskaitymas
-  cout << "Ar norite ivesti duomenis, ar, kad juos nuskaitytu is failo? \n Ivesti - spauskite 1 \n Nuskaityti is failo - iveskite bet koki kita elementa \n";
+  cout << "Ar norite ivesti duomenis, ar, kad juos nuskaitytu is failo? \n Ivesti - spauskite 1 \n Nuskaityti is Random Failu(v0.4) - spauskite 2 \n Nuskaityti is failo - iveskite bet koki kita elementa \n";
   cin >> read;
   if (read=='1')
   {
@@ -92,6 +94,38 @@ int main ()
           cout << "Ar norite ivesti dar vieno mokinio duomenis? \n Jei taip, spauskite 1 \n Jei ne, iveskite bet koki kita elementa \n";
           cin >> check;
         }while(check=='1');
+
+        //isvedimas
+        for (int e=0; e<n; e++)
+        {
+        B[e].median=0.4*median(B[e].A)+0.6*B[e].egz;
+        }
+        for (int e=0; e<n; e++)
+        {
+        B[e].average=0.4*average(B[e].A)+0.6*B[e].egz;
+        }
+        output (n, B);//isvedimo funkcija
+ }
+ else if (read=='2')
+ {
+    auto start = std::chrono::steady_clock::now();
+    int howMany;//pazymiu kiekis
+    int numOfStudents=1000;
+    int k;//vektoriaus dydis
+    string nameOfFile=" ";
+    cout << "Iveskite, kiek norite, kad sugeneruotu pazymiu \n";
+    cin >> howMany;
+    for (int i=0; i<5; i++)//gali ramo neuztekt:D
+    {
+       auto start = std::chrono::steady_clock::now();
+       cout << "Failo dydis: " << numOfStudents << endl;
+       generateFile(numOfStudents, howMany, nameOfFile);
+       readFile(M, nameOfFile, k, howMany);
+       distributeFile(numOfStudents, k, M);
+       numOfStudents*=10;//dauginu is 10, kad generuotu failus su vis didesniais studentu kiekiais, kaip ir praso uzduotis
+       auto finish = std::chrono::steady_clock::now();
+       cout << "Bendras laikas: " << std::chrono::duration <double, milli>(finish - start).count() << "ms" << endl << endl;
+    }
  }
  else
  {
@@ -127,8 +161,7 @@ int main ()
       cout << e.what() << endl;
       return 0; //kills the program
     }
- }
-    //kreipiasi i funkcijas ir apskaiciuoja mediana/vidurki
+
     for (int e=0; e<n; e++)
     {
       B[e].median=0.4*median(B[e].A)+0.6*B[e].egz;
@@ -138,5 +171,7 @@ int main ()
       B[e].average=0.4*average(B[e].A)+0.6*B[e].egz;
     }
     output (n, B);//isvedimo funkcija
+ }
+
   return 0;
 }
