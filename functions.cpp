@@ -137,7 +137,6 @@ void readFile(vector<data> &M, string name, int &k, int nddydis)
         k++;
 
     }
-    cout << k<< endl;
     M.shrink_to_fit();
     auto finish = std::chrono::steady_clock::now();
     cout<<"Faila nuskaite per: "<<std::chrono::duration <double, milli>(finish - start).count()<<" ms"<<endl;
