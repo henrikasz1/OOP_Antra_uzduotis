@@ -4,7 +4,9 @@
 -----------------------------------------------------------
  Programa apdoroja naudotojo ivestus duomenis (vardas, pavarde, pazymiai, egzamino rezultatas) ir apskaiciuoja kiekvieno mokinio galutini rezultata pagal mediana arba vidurki.
 -----------------------------------------------------------
-# Programos funkcionalumas:
+
+
+# V0.1 versija ir programos funkcionalumas:
  1) Programa reikalauja ivesti mokinio varda (naudojant netinkamus vardui elementus, prasoma ivesti varda is naujo)
  
  2) Programa reikalauja ivesti mokinio pavarde (naudojant netinkamus vardui elementus, prasoma ivesti pavarde is naujo)
@@ -39,10 +41,10 @@ Sukurta nauja programos funkcija, kuri gali sugeneruoti 5 random failus(dydziai:
 Si nauja funkcija sugeneruoja faila, ji is naujo nuskaito ir galiausiai padalina i du failus (protingi/neprotingi). Taip pat si funkcija isveda kiekvieno etapo ivykdymo laika.
 
 Pvz:
-Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:
-
- Failo dydis: 1000
- Faila sugeneravo per: 15.607 ms
- Faila nuskaite per: 31.248 ms
- Studentus surusiavo ir isvede i naujus failus per: 15.642ms
- Bendras laikas: 78.1ms
+Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:<br/>
+<br/>
+ Failo dydis: 1000 <br/>
+ Faila sugeneravo per: 15.607 ms<br/>
+ Faila nuskaite per: 31.248 ms<br/>
+ Studentus surusiavo ir isvede i naujus failus per: 15.642ms<br/>
+ Bendras laikas: 78.1ms<br/>
