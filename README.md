@@ -88,7 +88,7 @@ Faila nuskaite per: 12212.9 ms<br/>
 Studentus surusiavo ir isvede i naujus failus per: 15482.4ms<br/>
 Bendras laikas: 35811.9ms<br/>
 
-#Deque
+# Deque
 
 Failo dydis: 1000<br/>
 Faila sugeneravo per: 18.97 ms<br/>
