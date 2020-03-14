@@ -52,7 +52,7 @@ Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:<br/>
  # v0.5 versija:
 ----------------
 # Kompiuteris
-<br/>
+
 CPU: Intel Core i5-4210U<br/>
 GPU: Intel HD 4400 (Mobile 1.0/1.1 GHz)<br/>
 SSD: Kingston SUV300S37A240G 240GB<br/>
@@ -88,3 +88,29 @@ Faila nuskaite per: 12212.9 ms<br/>
 Studentus surusiavo ir isvede i naujus failus per: 15482.4ms<br/>
 Bendras laikas: 35811.9ms<br/>
 <br/>
+
+#Deque
+
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 18.97 ms<br/>
+Faila nuskaite per: 12.993 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 16.974ms<br/>
+Bendras laikas: 72.916ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 89.948 ms<br/>
+Faila nuskaite per: 134.92 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 150.927ms<br/>
+Bendras laikas: 404.792ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 825.526 ms<br/>
+Faila nuskaite per: 1556.11 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1960.88ms<br/>
+Bendras laikas: 4372.49ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 9281.68 ms<br/>
+Faila nuskaite per: 14590.6 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 19093.2ms<br/>
+Bendras laikas: 42985.4ms<br/>
