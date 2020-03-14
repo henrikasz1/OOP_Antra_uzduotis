@@ -48,3 +48,33 @@ Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:<br/>
  Faila nuskaite per: 31.248 ms<br/>
  Studentus surusiavo ir isvede i naujus failus per: 15.642ms<br/>
  Bendras laikas: 78.1ms<br/>
+ 
+ # v0.5 versija:
+----------------
+ # Vector
+ Namu darbu pasirinktas kiekis: 5 <br/>
+ <br/>
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 21.953 ms<br/>
+Faila nuskaite per: 11.994 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 16.988ms<br/>
+Bendras laikas: 69.965ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 80.972 ms<br/>
+Faila nuskaite per: 110.937 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 145.926ms<br/>
+Bendras laikas: 362.789ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 925.467 ms<br/>
+Faila nuskaite per: 1295.26 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1595.09ms<br/>
+Bendras laikas: 3832.82ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 8100.71 ms<br/>
+Faila nuskaite per: 12212.9 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 15482.4ms<br/>
+Bendras laikas: 35811.9ms<br/>
+<br/>
