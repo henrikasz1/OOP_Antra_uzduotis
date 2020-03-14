@@ -51,6 +51,14 @@ Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:<br/>
  
  # v0.5 versija:
 ----------------
+# Kompiuteris
+<br/>
+CPU: Intel Core i5-4210U<br/>
+GPU: Intel HD 4400 (Mobile 1.0/1.1 GHz)<br/>
+SSD: Kingston SUV300S37A240G 240GB<br/>
+RAM: Samsung M471B1G73DB0-YK0 1x8GB<br/>
+MBD: Toshiba SATELLITE L50-B<br/>
+<br/>
  # Vector
  Namu darbu pasirinktas kiekis: 5 <br/>
  <br/>
