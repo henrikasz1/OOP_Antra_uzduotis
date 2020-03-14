@@ -33,7 +33,7 @@
 1) Ideta try/catch, kuris patikrina, ar failas, kuri nori nuskaityti, egzistuoja
 2) Programa padalinta i header ir cpp failus
 
--Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila arba isskleisti folderi, jame atsidaryti BASH arba CMD ir suvesti g++ main.cpp funkcijos.cpp | ./a.exe
+-Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila arba isskleisti folderi, jame atsidaryti BASH arba CMD ir suvesti g++ main.cpp functions.cpp | ./a.exe
 
 # v0.4 versija:
 
