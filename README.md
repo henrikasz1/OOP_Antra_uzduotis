@@ -113,3 +113,29 @@ Faila sugeneravo per: 9281.68 ms<br/>
 Faila nuskaite per: 14590.6 ms<br/>
 Studentus surusiavo ir isvede i naujus failus per: 19093.2ms<br/>
 Bendras laikas: 42985.4ms<br/>
+
+# List
+
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 15.585 ms<br/>
+Faila nuskaite per: 15.623 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 15.645ms<br/>
+Bendras laikas: 78.061ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 78.14 ms<br/>
+Faila nuskaite per: 109.349 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 171.86ms<br/>
+Bendras laikas: 374.977ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 859.325 ms<br/>
+Faila nuskaite per: 1046.81 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1499.9ms<br/>
+Bendras laikas: 3421.63ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 7968.19 ms<br/>
+Faila nuskaite per: 10686.8 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 18436.2ms<br/>
+Bendras laikas: 37122.4ms<br/>
