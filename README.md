@@ -59,7 +59,9 @@ SSD: Kingston SUV300S37A240G 240GB<br/>
 RAM: Samsung M471B1G73DB0-YK0 1x8GB<br/>
 MBD: Toshiba SATELLITE L50-B<br/>
 <br/>
+
  # Vector
+ 
  Namu darbu pasirinktas kiekis: 5 <br/>
  <br/>
 Failo dydis: 1000<br/>
