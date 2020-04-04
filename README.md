@@ -155,6 +155,7 @@ Bendras laikas: 37122.4ms<br/>
   |10000 | 17.918ms| 15.899ms| 8.995ms|
   |100000| 181.77ms|156.495ms| 84.51ms|
   
+  * Isvada - Vector < Deque < List (siai strategijai efektyviausia naudoti List konteineri)
   
 # strategija_2
 
