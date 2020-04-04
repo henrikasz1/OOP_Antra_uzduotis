@@ -161,8 +161,13 @@ Bendras laikas: 37122.4ms<br/>
  Naudoti bendra konteineri, is kurio bus istrinti netinkami duomenys ir sukelti i naujai sukurta konteineri
        
        
-       -
-       
+  | Size |    Vector   |     Deque   |  List  |
+  |------|-------------|-------------|--------|
+  |1000  |    108.934ms|      46.87ms|     1ms|
+  |10000 |    10749.3ms|    4312.19ms| 5.994ms|
+  |100000| Nesulaukiau | Nesulaukiau |67.962ms|
+  
+ * Isvada - sis budas yra labai "skausmingas" vector ir deque konteiniariams, taciau stipriai pagreitina list konteinerio veikima
        
 # strategija su algoritmu
 
@@ -176,3 +181,6 @@ Bendras laikas: 37122.4ms<br/>
   |100000| 181.77ms    |      149.398ms        |
   
   * Isvada - naudojamas algoritmas zenkliai paspartina programa
+  
+  
+  * Bendra isvada -  tokiu atveju yra geriau naudotis 2 strategija del atminties ir vykydymo laiko mazinimo. Geriausiai darba rusiuojant atlieka list konteineris (arba galima panaudoti ir kitus konteinerius, naudojant algoritmus).
