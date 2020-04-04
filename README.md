@@ -1,9 +1,8 @@
 # OOP_Antra_uzduotis
 # Antroji objektinio programavimo uzduotis
-# v1.0 versija:
+# v0.1 versija:
 -----------------------------------------------------------
  Programa apdoroja naudotojo ivestus duomenis (vardas, pavarde, pazymiai, egzamino rezultatas) ir apskaiciuoja kiekvieno mokinio galutini rezultata pagal mediana arba vidurki.
------------------------------------------------------------
 
 
 # V0.1 versija ir programos funkcionalumas:
