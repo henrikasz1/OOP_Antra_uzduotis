@@ -148,11 +148,13 @@ Bendras laikas: 37122.4ms<br/>
  
   Isskirti bendra konteineri i du atskirus konteinerius:
   
+  
   | Size |  Vector |   Deque |  List  |
   |------|---------|---------|--------|
   |1000  |  2.996ms|  1.997ms| 1.554ms|
   |10000 | 17.918ms| 15.899ms| 8.995ms|
   |100000| 181.77ms|156.495ms| 84.51ms|
+  
   
 # strategija_2
 
