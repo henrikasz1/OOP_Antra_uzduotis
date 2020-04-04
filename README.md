@@ -157,3 +157,20 @@ Bendras laikas: 37122.4ms<br/>
 # strategija_2
 
  Naudoti bendra konteineri, is kurio bus istrinti netinkami duomenys ir sukelti i naujai sukurta konteineri
+       
+       
+       -
+       
+       
+# strategija su algoritmu
+
+ * Naudojamas konteineris - vektorius
+ * Naudojamas algoritmas - std::stable_partition
+
+  | Size |  Strategy_1 |  Strategy_2_algorithm |
+  |------|-------------|-----------------------|
+  |1000  |  2.996ms    |        1.976ms        |
+  |10000 | 17.918ms    |       15.496ms        |
+  |100000| 181.77ms    |      149.398ms        |
+  
+  * Isvada - naudojamas algoritmas zenkliai paspartina programa
