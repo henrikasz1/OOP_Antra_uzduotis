@@ -147,9 +147,7 @@ Bendras laikas: 37122.4ms<br/>
 
   Tam, kad ja panaudoti, atidarykite konsole ir iveskite
   
-  -------------
-  cmake .
-  -------------
+  $     cmake .
   
 
 # strategija_1
