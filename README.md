@@ -145,11 +145,6 @@ Bendras laikas: 37122.4ms<br/>
 * Programa pakeista, naudojant skirtingas strategijas kiekvienam konteineriui
 * Prideta cmake
 
-  Tam, kad ja panaudoti, atidarykite konsole ir iveskite
-  
-  $     cmake .
-  
-
 # strategija_1
  
   Isskirti bendra konteineri i du atskirus konteinerius:
