@@ -144,7 +144,9 @@ Bendras laikas: 37122.4ms<br/>
 --------------
 * Programa pakeista, naudojant skirtingas strategijas kiekvienam konteineriui
 * Prideta cmake
+
   Tam, kad ja panaudoti, atidarykite konsole ir iveskite
+  
   -------------
   cmake .
   -------------
