@@ -142,6 +142,13 @@ Bendras laikas: 37122.4ms<br/>
 
 # v1.0 versija
 --------------
+* Programa pakeista, naudojant skirtingas strategijas kiekvienam konteineriui
+* Prideta cmake
+  Tam, kad ja panaudoti, atidarykite konsole ir iveskite
+  -------------
+  cmake .
+  -------------
+  
 
 # strategija_1
  
