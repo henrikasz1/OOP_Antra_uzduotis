@@ -2,29 +2,29 @@
 #include <limits>
 #include <string>
 #include <iomanip>
+#include <vector>
 #include <algorithm>
 
 #define sizeArray 100 //bus naudojama dinaminio masyvo atminciai paskirti
 
 using namespace std;
 
-double median (int n, int A[]);
-double average (int n, int A[]);
+double median (const vector<int> A);
+double average (const vector<int> A);
 //void output (int n, data &darray);
 
 struct data{
   string name;//vardas
   string lastName;//pavarde
   int egz;//egzamino rezultatai
-  int *nd = new int[sizeArray]; //namu darbai
-  double total;//naudojama medianos arba vidurkio isvedimui
+  double total;//naudojamas vidurkio isvedimui
   int m=0; //namu darbu rezultatu kiekis
 };//struktura
-
 int main ()
 {
   data *darray;//dinamines masyvo pointeris
   darray = new data[sizeArray];
+  vector<int> A; //masyvas, kuriame bus saugojami namu darbu rezultatai
   int check=1, choice, cchoice;
   int n=0;//masyvo dydis
   while (check==1)//jeigu 1, ciklas kartojamas, jeigu ivedamas kitas skaicius, ciklas baigiasi, jeigu cin.fail(), ciklas taip pat baigiasi
@@ -49,35 +49,42 @@ int main ()
           cin >> darray[n].lastName;
       }
     }
+
+    //-----------------
     cout << "Ar norite, kad pazymius: \nSugeneruotu automatiskai? - iveskite bet kokia kita reiksme \n Suvestumete patys? - iveskite 1\n";
     cin >> choice;
     int more=1;
+    int input; //input'as vektoriui
     if (choice==1)
     {
       while(more==1)
       {
         cout << "Iveskite pazymi \n";
-        cin >> darray[n].nd[darray[n].m];
-        while (darray[n].nd[darray[n].m]<0 || darray[n].nd[darray[n].m]>10 ||cin.fail())
+        cin >> input;
+        A.push_back(input);                        //darray[n].nd[darray[n].m];
+        while (input<0 || input>10 ||cin.fail())
         {
+          A.pop_back();
           cin.clear();
           cin.ignore(numeric_limits<streamsize>::max(), '\n');
-          cout << "Ivedete netinkama reiskme \n";
-          cin >> darray[n].nd[darray[n].m];
+          cout << "Ivedete netinkama reiksme \n";
+          cin >> input;
+          A.push_back(input);
         }
-        darray[n].m++;
         cout << "Ar norite ivesti dar viena pazymi?\n Jei taip - spauskite 1 \n Jei ne - iveskite bet kokia kita reiksme \n";
         cin >> more;
       }
     }
     else
     {
-        darray[n].m=rand()%10+1;
-        for (int j=0; j<darray[n].m; j++)
+        int random=rand()%10+1;
+        for (int j=0; j<random; j++)
         {
-          darray[n].nd[j]=rand()%10+1;
+          A.push_back(rand()%10+1);
         }
     }
+
+    //-------------
     cout << "Iveskite mokinio egzamino rezultata \n";
     cin >> darray[n].egz;
     while(cin.fail() || darray[n].egz<0 || darray[n].egz>10)
@@ -99,7 +106,7 @@ int main ()
     {
       for (int e=0; e<n; e++)
       {
-        darray[e].total=0.4*median(darray[e].m, darray[e].nd)+0.6*darray[e].egz;
+        darray[e].total=0.4*median(A)+0.6*darray[e].egz;
       }
       cout << "Pavarde            Vardas          Galutinis(Med.)" << endl;
       cout <<"---------------------------------------------------"<<endl;
@@ -112,7 +119,7 @@ int main ()
     {
       for (int e=0; e<n; e++)
       {
-        darray[e].total=0.4*average(darray[e].m, darray[e].nd)+0.6*darray[e].egz;
+        darray[e].total=0.4*average(A)+0.6*darray[e].egz;
       }
       cout << "Pavarde            Vardas          Galutinis(Vid.)" << endl;
       cout <<"---------------------------------------------------"<<endl;
@@ -124,37 +131,28 @@ int main ()
   darray=NULL;
   return 0;
 }
-double median (int n, int A[])
+double median (vector<int> A)
 {
   int a, b;//lakikini kintamieji medianos skaiciavimui
-  for (int i=0; i<n-1; i++)
+  sort(A.begin(), A.end());
+  if (A.size()%2==0)
   {
-    for (int j=i+1; j<n; j++)
-    {
-      if (A[i]>A[j])
-      {
-        swap(A[i], A[j]);
-      }
-    }
-  }
-  if (n%2==0)
-  {
-    a=n/2;
-    b=n/2-1;
+    a=A.size()/2;
+    b=A.size()/2-1;
     return (A[a]+A[b])*1.0/2;
   }
   else
   {
-    a=n/2;
+    a=A.size()/2;
     return A[a];
   }
 }
-double average (int n, int A[])
+double average (const vector<int> A)
 {
   int total=0;
-  for(int i=0; i<n; i++)
+  for(int i=0; i<A.size(); i++)
   {
     total+=A[i];
   }
-  return total*1.0/n;
+  return total*1.0/A.size();
 }

@@ -17,3 +17,6 @@
  
  6) Programa klausia, ar naudotojas nori ivesti dar vieno mokinio duomenis
  
+# v1.0 versija su vektoriais:
+---------------------------------------------------------
+ Programos funkcionalumas islieka toks pats, vienintelis pakeitimas ir tas, kad mokiniu namu darbu rezultatai saugojami ne i dinamini masyva, o vektoriu.
