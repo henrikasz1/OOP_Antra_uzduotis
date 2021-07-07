@@ -4,7 +4,9 @@
 -----------------------------------------------------------
  Programa apdoroja naudotojo ivestus duomenis (vardas, pavarde, pazymiai, egzamino rezultatas) ir apskaiciuoja kiekvieno mokinio galutini rezultata pagal mediana arba vidurki.
 -----------------------------------------------------------
-# Programos funkcionalumas:
+
+
+# V0.1 versija ir programos funkcionalumas:
  1) Programa reikalauja ivesti mokinio varda (naudojant netinkamus vardui elementus, prasoma ivesti varda is naujo)
  
  2) Programa reikalauja ivesti mokinio pavarde (naudojant netinkamus vardui elementus, prasoma ivesti pavarde is naujo)
@@ -31,7 +33,7 @@
 1) Ideta try/catch, kuris patikrina, ar failas, kuri nori nuskaityti, egzistuoja
 2) Programa padalinta i header ir cpp failus
 
--Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila
+-Programa patariama pasijungti per CodeBlocks IDE ir atsidaryti cbp faila arba isskleisti folderi, jame atsidaryti BASH arba CMD ir suvesti g++ main.cpp functions.cpp | ./a.exe
 
 # v0.4 versija:
 
@@ -39,10 +41,101 @@ Sukurta nauja programos funkcija, kuri gali sugeneruoti 5 random failus(dydziai:
 Si nauja funkcija sugeneruoja faila, ji is naujo nuskaito ir galiausiai padalina i du failus (protingi/neprotingi). Taip pat si funkcija isveda kiekvieno etapo ivykdymo laika.
 
 Pvz:
-Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:
+Kai random failo dydis - 1000 ir namu darbu kiekis - 10, programa isveda:<br/>
+<br/>
+ Failo dydis: 1000 <br/>
+ Faila sugeneravo per: 15.607 ms<br/>
+ Faila nuskaite per: 31.248 ms<br/>
+ Studentus surusiavo ir isvede i naujus failus per: 15.642ms<br/>
+ Bendras laikas: 78.1ms<br/>
+ 
+ # v0.5 versija:
+----------------
+# Kompiuteris
 
- Failo dydis: 1000
- Faila sugeneravo per: 15.607 ms
- Faila nuskaite per: 31.248 ms
- Studentus surusiavo ir isvede i naujus failus per: 15.642ms
- Bendras laikas: 78.1ms
+CPU: Intel Core i5-4210U<br/>
+GPU: Intel HD 4400 (Mobile 1.0/1.1 GHz)<br/>
+SSD: Kingston SUV300S37A240G 240GB<br/>
+RAM: Samsung M471B1G73DB0-YK0 1x8GB<br/>
+MBD: Toshiba SATELLITE L50-B<br/>
+<br/>
+
+ # Vector
+ 
+ Namu darbu pasirinktas kiekis: 5 <br/>
+ <br/>
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 21.953 ms<br/>
+Faila nuskaite per: 11.994 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 16.988ms<br/>
+Bendras laikas: 69.965ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 80.972 ms<br/>
+Faila nuskaite per: 110.937 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 145.926ms<br/>
+Bendras laikas: 362.789ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 925.467 ms<br/>
+Faila nuskaite per: 1295.26 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1595.09ms<br/>
+Bendras laikas: 3832.82ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 8100.71 ms<br/>
+Faila nuskaite per: 12212.9 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 15482.4ms<br/>
+Bendras laikas: 35811.9ms<br/>
+
+# Deque
+
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 18.97 ms<br/>
+Faila nuskaite per: 12.993 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 16.974ms<br/>
+Bendras laikas: 72.916ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 89.948 ms<br/>
+Faila nuskaite per: 134.92 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 150.927ms<br/>
+Bendras laikas: 404.792ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 825.526 ms<br/>
+Faila nuskaite per: 1556.11 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1960.88ms<br/>
+Bendras laikas: 4372.49ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 9281.68 ms<br/>
+Faila nuskaite per: 14590.6 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 19093.2ms<br/>
+Bendras laikas: 42985.4ms<br/>
+
+# List
+
+Failo dydis: 1000<br/>
+Faila sugeneravo per: 15.585 ms<br/>
+Faila nuskaite per: 15.623 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 15.645ms<br/>
+Bendras laikas: 78.061ms<br/>
+<br/>
+Failo dydis: 10000<br/>
+Faila sugeneravo per: 78.14 ms<br/>
+Faila nuskaite per: 109.349 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 171.86ms<br/>
+Bendras laikas: 374.977ms<br/>
+<br/>
+Failo dydis: 100000<br/>
+Faila sugeneravo per: 859.325 ms<br/>
+Faila nuskaite per: 1046.81 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 1499.9ms<br/>
+Bendras laikas: 3421.63ms<br/>
+<br/>
+Failo dydis: 1000000<br/>
+Faila sugeneravo per: 7968.19 ms<br/>
+Faila nuskaite per: 10686.8 ms<br/>
+Studentus surusiavo ir isvede i naujus failus per: 18436.2ms<br/>
+Bendras laikas: 37122.4ms<br/>
