@@ -20,3 +20,12 @@
 # v1.0 versija su vektoriais:
 ---------------------------------------------------------
  Programos funkcionalumas islieka toks pats, vienintelis pakeitimas ir tas, kad mokiniu namu darbu rezultatai saugojami ne i dinamini masyva, o vektoriu.
+ 
+ # v0.2 versija:
+ --------------------------------------------------------
+ 1) Pakeistas random skaiciu generavimas, dabar kiekviena karta skaiciai bus skirtinti(pagal laika)
+ 2) Pakeistas vardo ir pavardes ivedimo tikrinimas (ankstesnese versijose kartais crash'indavo)
+ 3) Sulygiuota duomenu lentele, todel dabar ja daug lengviau skaityti
+ 4) Nuo siol galima pasirinkti, ar duomenis naudotojas nori nuskaityti is failo, ar juos ivesti
+ 5) Programa isveda surikiuotus duomenis pagal varda (arba jeigu vardas toks pats, pagal pavarde)
+ 6) Isimtas pasirinkimas, ar apskaiciuoti galutini rezultata mediana, ar vidurkiu (pagal uzduoties salyga)
