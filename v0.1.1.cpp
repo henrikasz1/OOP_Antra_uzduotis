@@ -5,13 +5,11 @@
 #include <vector>
 #include <algorithm>
 
-#define sizeArray 100 //bus naudojama dinaminio masyvo atminciai paskirti
-
 using namespace std;
 
-double median (const vector<int> A);
-double average (const vector<int> A);
-//void output (int n, data &darray);
+double median (vector<int> A);
+double average (vector<int> A);
+//void output (int n, data &B);
 
 struct data{
   string name;//vardas
@@ -19,34 +17,42 @@ struct data{
   int egz;//egzamino rezultatai
   double total;//naudojamas vidurkio isvedimui
   int m=0; //namu darbu rezultatu kiekis
+  vector<int> A; //vektorius, kuriame bus saugojami namu darbu rezultatai
 };//struktura
 int main ()
 {
-  data *darray;//dinamines masyvo pointeris
-  darray = new data[sizeArray];
-  vector<int> A; //masyvas, kuriame bus saugojami namu darbu rezultatai
-  int check=1, choice, cchoice;
-  int n=0;//masyvo dydis
-  while (check==1)//jeigu 1, ciklas kartojamas, jeigu ivedamas kitas skaicius, ciklas baigiasi, jeigu cin.fail(), ciklas taip pat baigiasi
+  vector<data> B;//vektorius, kuriame bus kiekvieno mokinio duomenys
+  //-----
+  int check; //elementas, kuris tikrina, ar norima ivesti dar viena mokini
+  int choice, cchoice;
+  int n=0;//vektoriaus dydis
+
+  //uzduotys before v0.2
+  //keiciu B[n] i vektoriu B
+  //sutvarkyti patikrinimus!!!!!!
+
+
+  do //jeigu 1, ciklas kartojamas, jeigu ivedamas kitas skaicius, ciklas baigiasi, jeigu cin.fail(), ciklas taip pat baigiasi
   {
+    B.push_back(data());
     cout << "Iveskite mokinio varda\n";
-    cin >> darray[n].name;
-    for (int p=0; p<darray[n].name.length(); p++)
+    cin >> B[n].name;
+    for (int p=0; p<B[n].name.length(); p++)
     {
-      while((darray[n].name[p]<'A'|| darray[n].name[p]>'Z')&&(darray[n].name[p]<'a'||darray[n].name[p]>'z'))
+      while((B[n].name[p]<'A'|| B[n].name[p]>'Z')&&(B[n].name[p]<'a'||B[n].name[p]>'z'))
       {
           cout << "Ivedete netinkama reiksme, bandykite dar karta \n";
-          cin >> darray[n].name;
+          cin >> B[n].name;
       }
     }
     cout << "Iveskite mokinio pavarde \n";
-    cin >> darray[n].lastName;
-    for (int b=0; b<darray[n].lastName.length(); b++)
+    cin >> B[n].lastName;
+    for (int b=0; b<B[n].lastName.length(); b++)
     {
-      while((darray[n].lastName[b]<'A'|| darray[n].lastName[b]>'Z')&&(darray[n].lastName[b]<'a'||darray[n].lastName[b]>'z'))
+      while((B[n].lastName[b]<'A'|| B[n].lastName[b]>'Z')&&(B[n].lastName[b]<'a'||B[n].lastName[b]>'z'))
       {
           cout << "Ivedete netinkama reiksme, bandykite dar karta \n";
-          cin >> darray[n].lastName;
+          cin >> B[n].lastName;
       }
     }
 
@@ -61,15 +67,15 @@ int main ()
       {
         cout << "Iveskite pazymi \n";
         cin >> input;
-        A.push_back(input);                        //darray[n].nd[darray[n].m];
+        B[n].A.push_back(input);                        //B[n].nd[B[n].m];
         while (input<0 || input>10 ||cin.fail())
         {
-          A.pop_back();
+          B[n].A.pop_back();
           cin.clear();
           cin.ignore(numeric_limits<streamsize>::max(), '\n');
           cout << "Ivedete netinkama reiksme \n";
           cin >> input;
-          A.push_back(input);
+          B[n].A.push_back(input);
         }
         cout << "Ar norite ivesti dar viena pazymi?\n Jei taip - spauskite 1 \n Jei ne - iveskite bet kokia kita reiksme \n";
         cin >> more;
@@ -80,25 +86,25 @@ int main ()
         int random=rand()%10+1;
         for (int j=0; j<random; j++)
         {
-          A.push_back(rand()%10+1);
+          B[n].A.push_back(rand()%10+1);
         }
     }
 
     //-------------
     cout << "Iveskite mokinio egzamino rezultata \n";
-    cin >> darray[n].egz;
-    while(cin.fail() || darray[n].egz<0 || darray[n].egz>10)
+    cin >> B[n].egz;
+    while(cin.fail() || B[n].egz<0 || B[n].egz>10)
     {
       cin.clear();
       cin.ignore(numeric_limits<streamsize>::max(), '\n');
       cout << "Egzamino rezultatas gali buti sudarytas tik is skaciu, bandykite dar karta \n";
-      cin >> darray[n].egz;
+      cin >> B[n].egz;
     }
     n++;
     cout << "Ar norite ivesti dar vieno mokinio duomenis? \n Jei taip, spauskite 1 \n Jei ne, iveskite bet kokia kita reiksme \n";
     cin >> check;
-  }
-    delete []darray;
+  }while(check==1);
+
 
     cout << "Kokiu budu norite apskaiciuoti bala? \n Mediana - spauskite 1 \n Vidurkiu - iveskite bet kokia kita reiksme \n";
     cin >> cchoice;
@@ -106,29 +112,28 @@ int main ()
     {
       for (int e=0; e<n; e++)
       {
-        darray[e].total=0.4*median(A)+0.6*darray[e].egz;
+        B[e].total=0.4*median(B[e].A)+0.6*B[e].egz;
       }
       cout << "Pavarde            Vardas          Galutinis(Med.)" << endl;
       cout <<"---------------------------------------------------"<<endl;
       for (int i=0; i<n; i++)
       {
-        cout << darray[i].name << "          " << darray[i].lastName << "        " << fixed << setprecision(2) << darray[i].total << endl;
+        cout << B[i].name << "          " << B[i].lastName << "        " << fixed << setprecision(2) << B[i].total << endl;
       }
     }
     else
     {
       for (int e=0; e<n; e++)
       {
-        darray[e].total=0.4*average(A)+0.6*darray[e].egz;
+        B[e].total=0.4*average(B[e].A)+0.6*B[e].egz;
       }
-      cout << "Pavarde            Vardas          Galutinis(Vid.)" << endl;
+      cout << "Vardas            Pavarde          Galutinis(Vid.)" << endl;
       cout <<"---------------------------------------------------"<<endl;
       for (int i=0; i<n; i++)
       {
-        cout << darray[i].name << "          " << darray[i].lastName << "        " << fixed << setprecision(2) << darray[i].total << endl;
+        cout << B[i].name << "          " << B[i].lastName << "        " << fixed << setprecision(2) << B[i].total << endl;
       }
     }
-  darray=NULL;
   return 0;
 }
 double median (vector<int> A)
@@ -147,7 +152,7 @@ double median (vector<int> A)
     return A[a];
   }
 }
-double average (const vector<int> A)
+double average (vector<int> A)
 {
   int total=0;
   for(int i=0; i<A.size(); i++)
